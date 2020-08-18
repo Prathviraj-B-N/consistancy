@@ -1,3 +1,5 @@
+//Learn array and for loop
+
 #include<iostream>
 
 void main() {
