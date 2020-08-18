@@ -1,3 +1,3 @@
 # consistancy
 
-n days of code
+{ n days of code | n ∈ Z }
