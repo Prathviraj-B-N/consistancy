@@ -1,8 +1,10 @@
 // Learn simple sort and binary search
 
 #include <iostream>
+
 void place(int* array,int temp,int i);
 int binary_search(int* arr, int element, int n);
+
 int main() {
 	int SIZE,num;
 	std::cout << "How many elements do you want to enter?" << std::endl;
@@ -15,7 +17,7 @@ int main() {
 		std::cin >> num;
 		place(arr,num,i);
 	}
-	std::cout << "\nDo you want to seach index of any element after search?[press y/n]"<< std::endl;
+	std::cout << "\nDo you want to seach index of any element?[press y/n]"<< std::endl;
 	char option;
 	std::cin >> option;
 	if (option == 'y' || option == 'Y') {
@@ -41,6 +43,8 @@ int main() {
 	return 0;
 }
 
+
+
 void place(int* array,int temp, int i) {
 
 	//    O(n)
@@ -54,6 +58,8 @@ void place(int* array,int temp, int i) {
 	}
 	array[i] = temp;	
 }
+
+
 
 int binary_search(int* array, int element ,int n) {
 
