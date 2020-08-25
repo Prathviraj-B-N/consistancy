@@ -50,7 +50,6 @@ void createStk(char* stk, std::string name, int size) {
     return;
 }
 
-
 void displayStackOp(char* item, int j, int size) {
     
     for (int i = 0; i < size - j -1; i++) {
