@@ -6,6 +6,7 @@
 void displayStackOp(char* item, int box, int size);
 int findLen(std::string name);
 void createStk(char *stk, std::string name, int size);
+void reverse(char *stk,int size);
 
 int main()
 {
@@ -29,6 +30,7 @@ int main()
         displayStackOp(stk, i, SIZE);
     }
     
+    reverse(stk, SIZE-1);
 
     return 0;
 }
@@ -59,4 +61,12 @@ void displayStackOp(char* item, int j, int size) {
     }
     std::cout << "---\n";
     std::cout << "\n";
+}
+
+void reverse(char* stk,int size) {
+    
+    std::cout << "Final Output : ";
+    while (size >= 0) {
+        std::cout << stk[size--];
+    }
 }
