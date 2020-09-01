@@ -1,6 +1,5 @@
 #include <iostream>
 #include<string>
-
 void count(std::string);
 
 int main()
