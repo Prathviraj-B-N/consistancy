@@ -1,3 +1,6 @@
+// quickSort.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
 
 void quickSort(int* array,int l,int r);
@@ -17,39 +20,43 @@ int main()
         std::cin >> A[i];
     }
 
-    quickSort(A);
+    quickSort(A,0,SIZE-1);
+
+    for (int i = 0; i < SIZE; i++) {
+        std::cout << "[" << i + 1 << "/" << SIZE << "]:";
+        std::cout << A[i]<<'\n';
+    }
 }
 
-void quickSort(int* array, int l, int r)
+void quickSort(int* A, int l, int r)
 {
-    if (l >= r) {
-        int piviot = partition(array, l, r);
-        quickSort(array, l, piviot);
-        quickSort(array, piviot+1,r);
+    if (l < r) {
+        int piviot = partition(A, l, r);
+        quickSort(A, l, piviot-1);
+        quickSort(A, piviot+1,r);
 
     }
     
 }
 
-int partition(int* array, int l, int r)
+int partition(int* A, int l, int r)
 {
     int i = l-1;
-    int piv = array[r];
+    int piv = A[r];
 
     for (int x = l; x < r; x++) {
-        if (array[x] < piv) {
+        if (A[x] < piv) {
             i++;
-            swap(array, i + 1,x);
+            swap(A, i,x);
         }
-        else {
-            
-        }
+        
     }
+    swap(A, i + 1, r);
     return (i+1);
 }
 
-void swap(int* array, int i, int j) {
-    int temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+void swap(int* A, int i, int j) {
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
 }
