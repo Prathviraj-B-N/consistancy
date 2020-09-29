@@ -1,6 +1,6 @@
 //time : O(n^2)
 //space: O(1) (internal sorting)
-//Stable sorting
+//unStable sorting (ex: 4,5,4,1 )
 
 
 #include <iostream>
