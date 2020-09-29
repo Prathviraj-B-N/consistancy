@@ -2,7 +2,6 @@
 //space: O(1) (internal sorting)
 //unStable sorting (ex: 4,5,4,1 )
 
-
 #include <iostream>
 
 void selection_sort(int* a, int n) {
@@ -26,7 +25,6 @@ void selection_sort(int* a, int n) {
         std::cout << a[i]<<std::endl;
     }
 }
-
 
 int main()
 {
