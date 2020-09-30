@@ -1,7 +1,6 @@
 // evenOddSort.cpp : Given an array of n element . Sort the array such that all even elements appear before odd and they must be in sorted order
 //sample input: n=5; arr[] = {7,2,1,5,8}; output[] = {2,8,1,5,7}  
 //
-
 #include <iostream>
 
 int N;
