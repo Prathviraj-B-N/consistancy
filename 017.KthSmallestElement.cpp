@@ -32,54 +32,53 @@ Testcase 2: 4th smallest elemets in the given array is 15.
 using namespace std;
 
 void minHeapify(int a[],int i,int &heapSize){
-  int least = a[i];
-  int left = i/2;
+  int least = i;
+  int left = i*2;
   int right = left+1;
-	if(a[left]<least && left<heapSize){
-		least = a[left];
+	if(a[left]<a[least] && left<=heapSize){
+		least = left;
   }
-  else if(a[right]<least && right<heapSize){
-	  least = a[right];
+  else if(a[right]<a[least] && right<=heapSize){
+	  least = right;
   }
-  if(least != a[i]){
+  if(a[least] != a[i]){
     int temp = a[least];
     a[least] = a[i];
     a[i] = temp;
-	  minHeapify(a,least,heapSize);
+	  minHeapify(&a,least,heapSize);
   }
 }
 
 void createHeap(int a[],int &heapSize){
-	for(int i=heapSize;i>heapSize/2;i++){
-		minHeapify(a,i,heapSize);
+	for(int i=heapSize;i>heapSize/2;i--){
+		minHeapify(&a,i,heapSize);
 	}
 }
 
-int kSmallest(int a[],int k,int heapSize){
+int kSmallest(int a[],int k,int &heapSize){
 	createHeap(a,heapSize);
-	for(int i=0;i<k;k++){
+	for(int i=1;i<=k;k++){
 		int temp = a[1];
-    a[1] = a[heapSize-1];
-    a[--heapSize] = temp;
-    minHeapify(a,1,heapSize);  	
-  }
-  return a[1];
+    		a[1] = a[heapSize-1];
+    		a[--heapSize] = temp;
+    		minHeapify(&a,1,heapSize);  	
+  	}
+  	return a[1];
 }
 
 int main(){
 	short int T;
 	cin>>T;
-	while(T--)
-  {
-	  int n,k;
-    int a[n];
-	  for(int i=0;i<n;i++){
-		  cin>>a[i];
-    }
-    cin>>k;
-    int heapSize = n;
-  cout<<kSmallest(a,k,heapSize);
-  }
-  
-  return 0;
+	while(T--){
+		int n,k;
+		cin>>n;
+		int a[n];
+		for(int i=1;i<=n;i++){
+			cin>>a[i];
+		}
+		cin>>k;
+		int heapSize = n;
+		cout<<kSmallest(a,k,heapSize);
+	}
+	return 0;
 }
