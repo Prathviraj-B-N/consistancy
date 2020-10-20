@@ -44,7 +44,6 @@ int main() {
 }
 
 
-
 void place(int* array,int temp, int i) {
 
 	//    O(n)
