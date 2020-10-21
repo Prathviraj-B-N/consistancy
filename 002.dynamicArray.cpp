@@ -4,11 +4,11 @@
 
 int main() {
 	int size;
-	int* array;
+	int *array;
 	std::cout << "Enter size of array: ";
 	std::cin >> size;
 
-	array = new int(size);
+	array = new int[size];
 	std::cout << "Enter elements :\n";
 	for (int i = 0; i < size; i++) {
 		
