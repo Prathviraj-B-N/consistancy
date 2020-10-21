@@ -22,6 +22,7 @@ int main() {
 		std::cout << "[" << i + 1 << "/" << size << "] : ";
 		std::cout << array[i]<<"\n";
 	}
-	
-	return *array;
+	delete []array;
+	array = nullptr;
+	return 0;
 }
