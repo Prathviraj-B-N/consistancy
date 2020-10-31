@@ -31,7 +31,7 @@ Testcase 2: 4th smallest elemets in the given array is 15.
 
 using namespace std;
 
-void minHeapify(int *a,int i,int &heapSize){
+void minHeapify(int a[],int i,int &heapSize){
   int least = i;
   int left = i*2;
   int right = left+1;
@@ -49,13 +49,13 @@ void minHeapify(int *a,int i,int &heapSize){
   }
 }
 
-void createHeap(int *a,int &heapSize){
+void createHeap(int a[],int &heapSize){
 	for(int i=heapSize;i>heapSize/2;i--){
 		minHeapify(a,i,heapSize);
 	}
 }
 
-int kSmallest(int *a,int k,int &heapSize){
+int kSmallest(int a[],int k,int &heapSize){
 	createHeap(a,heapSize);
 	for(int i=1;i<=k;k++){
 		int temp = a[1];
