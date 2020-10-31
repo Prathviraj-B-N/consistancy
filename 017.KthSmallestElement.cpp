@@ -59,8 +59,8 @@ int kSmallest(int *a,int k,int &heapSize){
 	createHeap(a,heapSize);
 	for(int i=1;i<=k;k++){
 		int temp = a[1];
-    		a[1] = a[heapSize-1];
-    		a[--heapSize] = temp;
+    		a[1] = a[heapSize--];
+    		a[heapSize] = temp;
     		minHeapify(a,1,heapSize);  	
   	}
   	return a[1];
@@ -72,6 +72,7 @@ int main(){
 	while(T--){
 		int n,k;
 		cin>>n;
+		n = n+1;
 		int a[n];
 		for(int i=1;i<=n;i++){
 			cin>>a[i];
