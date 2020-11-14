@@ -20,7 +20,7 @@ ostream& operator<<(ostream &o,human &obj){
 
 int main()
 {
-    human theja("Naruto",22);
-    cout<<theja;
+    human naruto("Naruto",22);
+    cout<<naruto;
     return 0;
 }
