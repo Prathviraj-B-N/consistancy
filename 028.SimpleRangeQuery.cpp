@@ -24,6 +24,7 @@ input : n is length of array
 
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 int main()
@@ -33,7 +34,7 @@ int main()
     //arr length
     cin>>n;
     
-    vector<int> arr(n+1,0);
+    vector<int> arr(n,0);
     
     cin>>q;
     while(q--){
@@ -43,9 +44,12 @@ int main()
         arr[r+1]--;
     }
     int temp=0;
-    for(int i=0;i<arr.size()-1;i++){
-        temp += arr[i];
-        cout<<temp<<" ";
+    for(int i=1;i<arr.size();i++){
+        arr[i] += arr[i-1];
+    }
+    for(int X:arr){
+        cout<<X<<" ";
+        fflush(stdout);
     }
     
     return 0;
