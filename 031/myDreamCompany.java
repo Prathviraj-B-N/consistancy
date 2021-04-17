@@ -1,6 +1,6 @@
 package com.pishere;
 
-public class dreamCompany {
+public class myDreamCompany {
 
     public static void main(String[] args) {
 	// write your code here
